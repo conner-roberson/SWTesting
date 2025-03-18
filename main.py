@@ -1,11 +1,9 @@
-def getHeightInMeters(heightFeet, heightInches):
-    ftToInches = heightFeet * 12
-    totalInches = ftToInches + heightInches
-    return totalInches * 0.025
 
 def getBmi(heightFeet, heightInches, weightLbs):
     kgWeight = weightLbs * .45
-    meterHeight = getHeightInMeters(heightFeet, heightInches)
+    ftToInches = heightFeet * 12
+    totalInches = ftToInches + heightInches
+    meterHeight = totalInches * 0.025
     heightSquared = meterHeight * meterHeight
     return round((kgWeight / heightSquared), 1)
 
