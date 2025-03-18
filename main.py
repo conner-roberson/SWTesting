@@ -15,7 +15,9 @@ def getBmi(heightFeet, heightInches, weightLbs):
     return round((kgWeight / heightSquared), 1)
 
 def getBmiCategory(BMI):
-    if BMI < 18.5:
+    if BMI < 0:
+        return "Something Went Wrong Please Retry"
+    elif BMI < 18.5:
         return "Underweight"
     elif BMI < 25:
         return "Normal Weight"
