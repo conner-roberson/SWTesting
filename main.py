@@ -1,5 +1,12 @@
 
 def getBmi(heightFeet, heightInches, weightLbs):
+    if(heightFeet < 0 or heightInches < 0 or weightLbs < 0):
+        if(heightFeet < 0 or heightInches < 0):
+            print("Invalid Height - NO NEGATIVE VALUES")
+            heightFeet, heightInches = input("Retry Enter Height: ").split()
+        elif(weightLbs < 0):
+            print("Invalid Weight - NO NEGATIVE VALUES")
+            weightLbs = input("Retry Enter Weight: ")
     kgWeight = weightLbs * .45
     ftToInches = heightFeet * 12
     totalInches = ftToInches + heightInches
