@@ -19,7 +19,13 @@ def getBmiCategory(BMI):
     
 print("Welcome to BMI calculator")
 heightFeet, heightInches = input("Enter height in feet then inches: ").split()
+if(heightFeet < 0 or heightInches < 0):
+    print("Invalid Height - NO NEGATIVE VALUES")
+    heightFeet, heightInches = input("Retry Enter Height: ").split()
 weightLbs = float(input("Enter weight in lbs: "))
+if(weightLbs < 0):
+    print("Invalid Weight - NO NEGATIVE VALUES")
+    weightLbs = input("Retry Enter Weight: ")
 
 print("BMI: ", getBmi(float(heightFeet), float(heightInches), weightLbs))
 print("Category: ", getBmiCategory(getBmi(float(heightFeet), float(heightInches), weightLbs)))
